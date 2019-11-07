@@ -1,16 +1,57 @@
 plugins {
-    id 'java'
+    id 'org.springframework.boot' version '2.1.6.RELEASE' apply false
+    id 'io.freefair.lombok' version '3.7.5' apply false
 }
 
-group 'com.simon.demo'
-version '1.0-SNAPSHOT'
+def springCloudVersion = 'Greenwich.SR2'
+def springBootVersion = '2.1.6.RELEASE'
+def JavaLang = JavaVersion.current()
 
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
+// 定义 version
+configure(allprojects) {
+    version = '1.0.0.SNAPSHOT'
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+// 定义通用依赖
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+    apply plugin: 'io.freefair.lombok'
+    apply plugin: 'io.spring.dependency-management'
+
+    targetCompatibility = JavaLang
+    sourceCompatibility = JavaLang
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+
+
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    compileJava {
+        options.incremental = true
+    }
+
+}
+
+configure(subprojects.findAll { it.name.endsWith('-app') }) {
+    apply plugin: 'org.springframework.boot'
+
+    dependencies {
+        compile 'org.springframework.cloud:spring-cloud-starter'
+        compile 'org.springframework.boot:spring-boot-starter-actuator'
+    }
 }

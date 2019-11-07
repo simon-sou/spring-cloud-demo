@@ -1,0 +1,9 @@
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-config-server'
+    compile 'org.springframework.cloud:spring-cloud-config-monitor'
+
+    testCompile 'junit:junit:4.11'
+
+    // Slf4j implementation used for tests.
+    testRuntime 'org.slf4j:slf4j-simple:1.7.7'
+}
