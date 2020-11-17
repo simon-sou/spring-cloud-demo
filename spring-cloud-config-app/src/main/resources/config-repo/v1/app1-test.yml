@@ -1,0 +1,4 @@
+config:
+  name: app1
+  profile: test
+  label: v1

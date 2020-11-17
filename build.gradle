@@ -1,10 +1,10 @@
 plugins {
-    id 'org.springframework.boot' version '2.1.6.RELEASE' apply false
+    id 'org.springframework.boot' version '2.3.5.RELEASE' apply false
     id 'io.freefair.lombok' version '3.7.5' apply false
 }
 
-def springCloudVersion = 'Greenwich.SR2'
-def springBootVersion = '2.1.6.RELEASE'
+def springCloudVersion = 'Hoxton.SR8'
+def springBootVersion = '2.3.5.RELEASE'
 def JavaLang = JavaVersion.current()
 
 // 定义 version
@@ -17,7 +17,7 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
     apply plugin: 'eclipse'
-    apply plugin: 'io.freefair.lombok'
+//    apply plugin: 'io.freefair.lombok'
     apply plugin: 'io.spring.dependency-management'
 
     targetCompatibility = JavaLang

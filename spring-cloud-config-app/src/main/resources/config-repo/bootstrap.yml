@@ -1,0 +1,3 @@
+config:
+  name: bootstrap
+  desc: "default config properties"

@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    include: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config-repo/  #本地配置中心地址
+
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+        boot:
+          context:
+            config:
+              ConfigFileApplicationListener: trace

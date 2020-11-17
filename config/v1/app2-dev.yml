@@ -1,0 +1,5 @@
+config:
+  name: app2
+  profile: dev
+  label: v1
+  addr: "root/config/v1"

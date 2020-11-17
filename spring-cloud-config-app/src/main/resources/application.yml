@@ -2,7 +2,9 @@ spring:
   application:
     name: configserver
   profiles:
-    active: native
+    active: ${SPRING_PROFILES_ACTIVE:local}
 
 server:
+  servlet:
+    context-path: /configserver
   port: 8888
