@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    include: native
+
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/simon-sou/spring-cloud-demo-config
+          username: 
+          password:
+          basedir: ${user.dir}/remote   # 本地缓存的 地址。 将git路径下载到本地; git config 读取时， 若basedir 有修改，则从 远端获取， 并且重新覆盖basedir。 若本地没有修改，则直接读取本地文件。
+          timeout: 5    # connect time out
+          force-pull: false  #force pull from git, if true: workTree not clean:  git fetch && checkout && merge  ; if false git checkout && merge
+                                                          # workTree clean; awayls git fetch && checkout && merge
+                                                          # if cannot merge; rebase from head
+          skip-ssl-validation: false # if use https , you can skip ssl validation
+          delete-untracked-branches: false # if true , delete remote 没有跟踪的 branch
