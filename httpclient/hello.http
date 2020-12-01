@@ -1,0 +1,12 @@
+### getValue
+
+GET {{origin}}:8000/hello/getValue
+
+### get hello2 Application's value
+GET {{origin}}:8000/hello/getHello2Value
+
+### get Hello2 Value By FeignClient
+GET {{origin}}:8000/hello/getHello2ValueByFeignClient
+
+###
+

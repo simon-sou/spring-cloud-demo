@@ -1,0 +1,10 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: hello2
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:nacos}

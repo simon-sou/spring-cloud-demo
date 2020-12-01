@@ -1,4 +1,4 @@
 ### configServer 获取配置文件
-GET {{origin}}/configserver/app1/dev,test/
+GET {{origin}}:8888/app1/dev,test/
 
 ###

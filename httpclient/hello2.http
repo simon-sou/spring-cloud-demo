@@ -1,0 +1,5 @@
+### getValue
+
+GET {{origin}}:8001/hello2/getValue
+
+###
