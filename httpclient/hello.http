@@ -9,4 +9,5 @@ GET {{origin}}:8000/hello/getHello2Value
 GET {{origin}}:8000/hello/getHello2ValueByFeignClient
 
 ###
+GET {{origin}}:8000/actuator/nacos-discovery
 

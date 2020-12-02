@@ -7,9 +7,21 @@ spring:
         server-addr: ${NACOS_SERVER_ADDR:localhost:8848}
         enabled: true
         refresh-enabled: true
+        extension-configs[0]:
+          data-id: test-nacos.yml
+          group: simon
+        extension-configs[1]:
+          data-id: test.yml
+          group: simon
+        namespace: 75f7197d-922a-48bf-a920-f41eab260bf7
       discovery:
         group: simon
         server-addr: ${NACOS_SERVER_ADDR:localhost:8848}
         enabled: true
       username: nacos
       password: nacos
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
