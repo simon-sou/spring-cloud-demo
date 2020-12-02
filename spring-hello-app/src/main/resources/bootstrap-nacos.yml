@@ -5,8 +5,11 @@ spring:
         group: simon
         file-extension: yaml
         server-addr: ${NACOS_SERVER_ADDR:localhost:8848}
+        enabled: true
+        refresh-enabled: true
       discovery:
         group: simon
         server-addr: ${NACOS_SERVER_ADDR:localhost:8848}
+        enabled: true
       username: nacos
       password: nacos
